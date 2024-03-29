@@ -1,0 +1,35 @@
+import java.util.*;
+class Guessgame
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to number guessing game");
+        System.out.println("Enter your range upto which you want the system to play:");
+        int x = sc.nextInt();
+        System.out.println("I have selected a number based on your spotted range");
+        Random r = new Random();
+        int n = r.nextInt(x) + 1;
+        int z = 0;
+        int u;
+        do
+        {
+            System.out.println("Enter your guessed number");
+            u = sc.nextInt();
+            z++;
+
+            if (u > n)
+            {
+                System.out.println("Too high!! Try again.");
+            }
+            else if (u < n)
+            {
+                System.out.println("Too low!! Try again.");
+            }
+        }
+        while(u != n);
+            {
+                System.out.println("Congratulations !! You have won in " + z + " guesses");
+            }
+    }
+}
